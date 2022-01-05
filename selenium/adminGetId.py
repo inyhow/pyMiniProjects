@@ -70,7 +70,11 @@ def grapUserId(url):
     option.add_experimental_option("detach", True)
     driver = webdriver.Chrome(executable_path="E:\Program Files\Python38\chromedriver.exe",options=option)
     
-    
+    # driver.execute_cdp_cmd("Network.enable", {})
+    # driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": {"User-Agent": "{Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1}"}})
+    #cdp命令与上面一样效果，用来实时改变user-agent等信息 命令来源 https://chromedevtools.github.io/devtools-protocol/
+    #driver.execute_cdp_cmd("Network.setUserAgentOverride", {'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'})
+
     # 隐藏window.navigator.webdriver =true的问题，使用如下cdp命令后，打开窗口后，window.navigator.webdriver =false 反爬虫检测一种方法
     driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
            "source": """
