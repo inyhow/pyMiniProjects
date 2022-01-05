@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/7/28 07:48
 # @Author  : inyhow
-# @File    : get_agent.py
+# @File    : http_proxy.py
 # @Desc    : 获取免费代理http ip数据
 
 import requests
